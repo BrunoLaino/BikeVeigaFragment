@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_register"
+            android:icon="@drawable/ic_menu_register"
+            android:title="@string/menu_register" />
+        <item
+            android:id="@+id/nav_pedaling"
+            android:icon="@drawable/ic_menu_pedaling"
+            android:title="@string/menu_pedaling" />
+        <item
+            android:id="@+id/nav_schedules"
+            android:icon="@drawable/ic_menu_schedules"
+            android:title="@string/menu_schedules" />
+        <item
+            android:id="@+id/nav_miles"
+            android:icon="@drawable/ic_menu_miles"
+            android:title="@string/menu_miles" />
+        <item
+            android:id="@+id/nav_mission"
+            android:icon="@drawable/ic_menu_mission"
+            android:title="@string/menu_mission" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/menu_about" />
+    </group>
+</menu>

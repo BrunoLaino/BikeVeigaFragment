@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.bikeibmec.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.example.bikeibmec.ui.register.RegisterFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_pedaling"
+        android:name="com.example.bikeibmec.ui.pedaling.PedalingFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_schedules"
+        android:name="com.example.bikeibmec.ui.schedules.SchedulesFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_miles"
+        android:name="com.example.bikeibmec.ui.miles.MilesFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_mission"
+        android:name="com.example.bikeibmec.ui.mission.MissionFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.bikeibmec.ui.about.AboutFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_home" />
+
+
+</navigation>
