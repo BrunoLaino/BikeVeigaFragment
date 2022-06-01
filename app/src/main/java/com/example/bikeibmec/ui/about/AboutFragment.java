@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.example.bikeibmec.R;
 
+import mehdi.sakout.aboutpage.AboutPage;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AboutFragment#newInstance} factory method to
@@ -60,7 +62,19 @@ public class AboutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+
+        return new AboutPage(getActivity())
+                .setImage(R.drawable.bike_logo)
+                .setDescription("O único aplicativo que te dá bônus por andar de bicicletas!")
+                .addGroup("Entre em contato")
+                .addEmail("bike@email.com", "Envie um e-mail")
+                .addWebsite("https://www.uva.br/", "Accesse nosso site")
+                .addGroup("Redes sociais")
+                .addFacebook("veigadealmeida", "Facebook")
+                .addInstagram("uva_oficial", "Instagram")
+                .addTwitter("uva_veiga", "Twitter")
+                .addPlayStore("br.uva.AppUVA", "Download App")
+                .create();
+
     }
 }

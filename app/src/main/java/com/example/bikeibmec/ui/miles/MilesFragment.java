@@ -94,8 +94,6 @@ public class MilesFragment extends Fragment {
         recyclerMilhas.addItemDecoration( new DividerItemDecoration(getActivity(), LinearLayout.VERTICAL));
         recyclerMilhas.setAdapter(milhasAdapter);
 
-        saibaMaisButton = (Button) rootView.findViewById(R.id.buttonMilhasSaibaMais);
-
         return rootView;
     }
 

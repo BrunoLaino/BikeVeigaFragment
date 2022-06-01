@@ -3,12 +3,21 @@ package com.example.bikeibmec.ui.schedules;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.bikeibmec.R;
+import com.example.bikeibmec.adapter.MarcacoesAdapter;
+import com.example.bikeibmec.model.appointment.Marcacao;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,14 +26,9 @@ import com.example.bikeibmec.R;
  */
 public class SchedulesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView recyclerView;
+    private List<Marcacao> marcacaoList = new ArrayList<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public SchedulesFragment() {
         // Required empty public constructor
@@ -42,8 +46,6 @@ public class SchedulesFragment extends Fragment {
     public static SchedulesFragment newInstance(String param1, String param2) {
         SchedulesFragment fragment = new SchedulesFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,16 +53,33 @@ public class SchedulesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedules, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_schedules, container, false);
+
+        recyclerView = rootView.findViewById(R.id.recyclerView);
+
+        createMarcacaos();
+        MarcacoesAdapter marcacoesAdapter = new MarcacoesAdapter(marcacaoList);
+
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration( new DividerItemDecoration(getActivity(), LinearLayout.VERTICAL));
+        recyclerView.setAdapter(marcacoesAdapter);
+
+        return rootView;
+    }
+
+    public void createMarcacaos(){
+        marcacaoList.add( new Marcacao("Pedalada em grupo", "14:00", "30/05/2022"));
+        marcacaoList.add( new Marcacao("Exame fisico", "09:00", "06/06/2022"));
+        marcacaoList.add( new Marcacao("Exibição de bikes", "19:00", "15/07/2022"));
+        marcacaoList.add( new Marcacao("Pedalada na serra em grupo", "06:00", "05/08/2022"));
     }
 }
